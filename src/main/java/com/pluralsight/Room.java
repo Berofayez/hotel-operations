@@ -40,6 +40,7 @@ public class Room {
     public boolean isAvailable(){
         return !isDirty && !isOccupied;
     }
+
     public void checkIn(){
         isOccupied = true;
         isDirty = true;
@@ -49,7 +50,8 @@ public class Room {
         isOccupied = false;
     }
     public void cleanroom(){
-        isDirty = false;
+
+        if(!isOccupied) isDirty = false;
     }
 
 }
